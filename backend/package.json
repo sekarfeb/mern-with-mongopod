@@ -2,7 +2,7 @@
   "name": "jobify",
   "version": "1.0.0",
   "description": "#### Track Your Job Search",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "install-dependencies": "npm run install-client && npm install",
