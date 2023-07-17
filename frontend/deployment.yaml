@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-app-deployment
+  name: frontend-app-jobify-deployment
 spec:
   replicas: 1
   selector:
@@ -14,7 +14,7 @@ spec:
         app: frontend-app-jobify
     spec:
       containers:
-        - name: app
+        - name: app-jobify
           image: sekarfeb/frontend-app-jobify:latest
           ports:
             - containerPort: 3000
