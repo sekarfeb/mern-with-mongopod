@@ -1,0 +1,36 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-app-jobify
+  template:
+    metadata:
+      labels:
+        app: frontend-app-jobify
+    spec:
+      containers:
+        - name: app
+          image: sekarfeb/frontend-app-jobify:latest
+          ports:
+            - containerPort: 3000
+---
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-app-service
+spec:
+  selector:
+    app: frontend-app-jobify 
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: LoadBalancer # Use the appropriate service type for your environment
+ 
+
