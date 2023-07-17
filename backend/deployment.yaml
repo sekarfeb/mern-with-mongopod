@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app-jobify
-          image: sekarfeb/backend-app-jobify-backendapp:latest
+          image: sekarfeb/jobify-mern-app-backend-app:latest
           ports:
             - containerPort: 5000
 ---
