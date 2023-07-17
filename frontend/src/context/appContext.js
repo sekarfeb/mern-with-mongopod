@@ -72,7 +72,7 @@ const AppProvider = ({ children }) => {
 
   // axios
   const authFetch = axios.create({
-    baseURL: 'http://34.134.220.123:5000/api/v1',
+    baseURL: '/api/v1',
   });
   // request
 
