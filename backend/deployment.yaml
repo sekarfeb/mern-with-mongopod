@@ -2,35 +2,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-app-deployment
+  name: backend-app-jobify-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend-app
+      app: backend-app-jobify
   template:
     metadata:
       labels:
-        app: backend-app
+        app: backend-app-jobify
     spec:
       containers:
-        - name: app
-          image: sekarfeb/ems-webapp-kubernetes-backend:latest
+        - name: app-jobify
+          image: sekarfeb/backend-app-jobify:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 5000
 ---
 # service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-app-service
+  name: backend-app-jobify-service
 spec:
   selector:
-    app: backend-app 
+    app: backend-app-jobify 
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 5000
+      targetPort: 5000
   type: LoadBalancer
   
 
