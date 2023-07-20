@@ -70,7 +70,7 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // axios
+  // axios baseURL should not be changed
   const authFetch = axios.create({
     baseURL: '/api/v1',
   });
