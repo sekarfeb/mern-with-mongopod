@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app-jobify
-          image: sekarfeb/jobify-mongo-backend-1:latest
+          image: sekarfeb/mern-with-mongopod-backend-3:latest
           ports:
             - containerPort: 5000
 ---
